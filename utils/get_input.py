@@ -2,7 +2,8 @@ import os
 import requests
 
 COOKIE = os.getenv("AOC_COOKIE")
-TEMPLATE_PY = """\"\"\"https://adventofcode.com/{year}/day/{day}
+TEMPLATE_PY = """\"\"\"
+https://adventofcode.com/{year}/day/{day}
 \"\"\"
 
 # Future imports (must occur at the beginning of the file):
@@ -17,9 +18,19 @@ import re
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.abspath(os.path.join(DIR_PATH, "input.txt"))
 
-if __name__ == "__main__":
+TEST_INPUT = """
+"""
+TEST_OUTPUT_P1 = ...
+TEST_OUTPUT_P2 = ...
+
+
+def main():
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
+
+
+if __name__ == "__main__":
+    main()
 """
 
 

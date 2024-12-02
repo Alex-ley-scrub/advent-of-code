@@ -55,7 +55,7 @@ def get_similarity_score(input_string: str) -> int:
     return sum(similarity_scores)
 
 
-if __name__ == "__main__":
+def main():
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
 
@@ -74,3 +74,7 @@ if __name__ == "__main__":
     output = get_similarity_score(ACTUAL_INPUT)
     assert output == 19678534, f"expected 19678534 but got {output}"
     print("actual part 2:", output)
+
+
+if __name__ == "__main__":
+    main()
