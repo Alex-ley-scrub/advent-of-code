@@ -23,6 +23,8 @@ TEST_INPUT = """
 """
 TEST_OUTPUT_P1 = 2
 TEST_OUTPUT_P2 = 4
+ACTUAL_OUTPUT_P1 = 236
+ACTUAL_OUTPUT_P2 = 308
 
 
 def is_report_safe(report: str) -> bool:
@@ -73,7 +75,7 @@ def main():
     print("test part 1:", output)
 
     output = get_total_safe_reports(ACTUAL_INPUT)
-    assert output == 236, f"expected 236 but got {output}"
+    assert output == ACTUAL_OUTPUT_P1, f"expected {ACTUAL_OUTPUT_P1} but got {output}"
     print("actual part 1:", output)
 
     output = get_total_safe_reports_with_dampener(TEST_INPUT)
@@ -81,7 +83,7 @@ def main():
     print("test part 2:", output)
 
     output = get_total_safe_reports_with_dampener(ACTUAL_INPUT)
-    assert output == 308, f"expected 308 but got {output}"
+    assert output == ACTUAL_OUTPUT_P2, f"expected {ACTUAL_OUTPUT_P2} but got {output}"
     print("actual part 2:", output)
 
 

@@ -13,21 +13,45 @@ from __future__ import annotations  # https://www.python.org/dev/peps/pep-0585/
 import os
 import re
 
-
 # https://adventofcode.com/{year}/day/{day}/input
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.abspath(os.path.join(DIR_PATH, "input.txt"))
 
-TEST_INPUT = """
-"""
+TEST_INPUT = \"\"\"
+\"\"\"
 TEST_OUTPUT_P1 = ...
 TEST_OUTPUT_P2 = ...
+ACTUAL_OUTPUT_P1 = ...
+ACTUAL_OUTPUT_P2 = ...
 
+def part_1(input_string: str):
+    \"\"\"https://adventofcode.com/{year}/day/{day}#part1\"\"\"
+    ...
+
+def part_2(input_string: str):
+    \"\"\"https://adventofcode.com/{year}/day/{day}#part2\"\"\"
+    ...
 
 def main():
+    \"\"\"https://adventofcode.com/{year}/day/{day}\"\"\"
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
 
+    output = part_1(TEST_INPUT)
+    assert output == TEST_OUTPUT_P1, f"expected {{TEST_OUTPUT_P1}} but got {{output}}"
+    print("test part 1:", output)
+
+    output = part_1(ACTUAL_INPUT)
+    assert output == ACTUAL_OUTPUT_P1, f"expected {{ACTUAL_OUTPUT_P1}} but got {{output}}"
+    print("actual part 1:", output)
+
+    output = part_2(TEST_INPUT)
+    assert output == TEST_OUTPUT_P2, f"expected {{TEST_OUTPUT_P2}} but got {{output}}"
+    print("test part 2:", output)
+
+    output = part_2(ACTUAL_INPUT)
+    assert output == ACTUAL_OUTPUT_P2, f"expected {{ACTUAL_OUTPUT_P2}} but got {{output}}"
+    print("actual part 2:", output)
 
 if __name__ == "__main__":
     main()
@@ -35,6 +59,7 @@ if __name__ == "__main__":
 
 
 def get_input(year: int, day: int) -> str:
+    """Get input for a given year and day and save it to a file."""
     url = f"https://adventofcode.com/{year}/day/{day}/input"
     response = requests.get(url, cookies={"cookie": COOKIE}, timeout=60)
     text = response.text

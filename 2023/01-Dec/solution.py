@@ -30,6 +30,8 @@ zoneight234
 7pqrstsixteen
 """
 TEST_OUTPUT_P2 = 281
+ACTUAL_OUTPUT_P1 = 54940
+ACTUAL_OUTPUT_P2 = 54208
 
 
 def get_calibration_int(calibration_string: str):
@@ -79,6 +81,7 @@ def get_sum_of_calibration_values(input_str: str):
 
 
 def main():
+    """https://adventofcode.com/2023/day/1"""
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
 
@@ -87,7 +90,7 @@ def main():
     print("test part 1:", output)
 
     output = get_sum_of_calibration_ints(ACTUAL_INPUT)
-    assert output == 54940, f"expected 54940 but got {output}"
+    assert output == ACTUAL_OUTPUT_P1, f"expected {ACTUAL_OUTPUT_P1} but got {output}"
     print("actual part 1:", output)
 
     output = get_sum_of_calibration_values(TEST_INPUT_P2)
@@ -95,7 +98,7 @@ def main():
     print("test part 2:", output)
 
     output = get_sum_of_calibration_values(ACTUAL_INPUT)
-    assert output == 54208, f"expected 54208 but got {output}"
+    assert output == ACTUAL_OUTPUT_P2, f"expected {ACTUAL_OUTPUT_P2} but got {output}"
     print("actual part 2:", output)
 
 

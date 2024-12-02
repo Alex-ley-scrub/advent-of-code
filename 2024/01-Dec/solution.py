@@ -23,6 +23,8 @@ TEST_INPUT = """
 """
 TEST_OUTPUT_P1 = 11
 TEST_OUTPUT_P2 = 31
+ACTUAL_OUTPUT_P1 = 2031679
+ACTUAL_OUTPUT_P2 = 19678534
 
 
 def get_total_distance(input_string: str) -> int:
@@ -56,6 +58,7 @@ def get_similarity_score(input_string: str) -> int:
 
 
 def main():
+    """https://adventofcode.com/2024/day/1"""
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
 
@@ -64,7 +67,7 @@ def main():
     print("test part 1:", output)
 
     output = get_total_distance(ACTUAL_INPUT)
-    assert output == 2031679, f"expected 2031679 but got {output}"
+    assert output == ACTUAL_OUTPUT_P1, f"expected {ACTUAL_OUTPUT_P1} but got {output}"
     print("actual part 1:", output)
 
     output = get_similarity_score(TEST_INPUT)
@@ -72,7 +75,7 @@ def main():
     print("test part 2:", output)
 
     output = get_similarity_score(ACTUAL_INPUT)
-    assert output == 19678534, f"expected 19678534 but got {output}"
+    assert output == ACTUAL_OUTPUT_P2, f"expected {ACTUAL_OUTPUT_P2} but got {output}"
     print("actual part 2:", output)
 
 
