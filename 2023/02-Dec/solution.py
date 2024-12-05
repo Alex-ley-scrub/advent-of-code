@@ -19,13 +19,14 @@ import pyperclip
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.abspath(os.path.join(DIR_PATH, "input.txt"))
 
-TEST_INPUT = """
+TEST_INPUT_P1 = """
 Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
 Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 """
+TEST_INPUT_P2 = TEST_INPUT_P1
 TEST_OUTPUT_P1 = 8
 TEST_OUTPUT_P2 = 2286
 ACTUAL_OUTPUT_P1 = 2810
@@ -83,7 +84,7 @@ def main():
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
 
-    output = part_1(TEST_INPUT)
+    output = part_1(TEST_INPUT_P1)
     assert output == TEST_OUTPUT_P1, f"expected {TEST_OUTPUT_P1} but got {output}"
     print("test part 1:", output)
 
@@ -92,7 +93,7 @@ def main():
     print("actual part 1:", output)
     pyperclip.copy(output)
 
-    output = part_2(TEST_INPUT)
+    output = part_2(TEST_INPUT_P2)
     assert output == TEST_OUTPUT_P2, f"expected {TEST_OUTPUT_P2} but got {output}"
     print("test part 2:", output)
 
