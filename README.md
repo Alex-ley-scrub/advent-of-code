@@ -1,4 +1,4 @@
-# Advent of Code 2023
+# Advent of Code 2023-2024
 
 python (and maybe rust) solutions to the [Advent of Code](https://adventofcode.com) problems
 
