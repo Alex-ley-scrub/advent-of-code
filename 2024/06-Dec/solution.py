@@ -56,13 +56,14 @@ def play_game(grid: list[list[str]], debug: bool = False):
     """https://adventofcode.com/2024/day/6"""
     r, c = -1, -1
     symbol = ""
-    for i, row in enumerate(grid):
-        if "^" in row or ">" in row or "v" in row or "<" in row:
-            r, c = i, row.index("^")
-            symbol = row[c]
-            break
     all_symbols = ["^", ">", "v", "<"]
     all_directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+    for row_idx, row in enumerate(grid):
+        for col_idx, cell in enumerate(row):
+            if cell in all_symbols:
+                r, c = row_idx, col_idx
+                symbol = cell
+                break
     assert symbol in all_symbols
     direction = all_directions[all_symbols.index(symbol)]
 
@@ -111,6 +112,7 @@ def part_2(input_string: str):
     grid_length = len(original_grid)
     grid_width = len(original_grid[0])
     total = 0
+    # this is a slow brute force solution, but it works
     for r in range(grid_length):
         for c in range(grid_width):
             if original_grid[r][c] != ".":
