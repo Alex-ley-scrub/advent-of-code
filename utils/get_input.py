@@ -51,6 +51,7 @@ def main():
     output = part_1(ACTUAL_INPUT)
     assert output == ACTUAL_OUTPUT_P1, f"expected {{ACTUAL_OUTPUT_P1}} but got {{output}}"
     print("actual part 1:", output)
+    pyperclip.copy(output)
 
     output = part_2(TEST_INPUT_P2)
     assert output == TEST_OUTPUT_P2, f"expected {{TEST_OUTPUT_P2}} but got {{output}}"
@@ -59,6 +60,7 @@ def main():
     output = part_2(ACTUAL_INPUT)
     assert output == ACTUAL_OUTPUT_P2, f"expected {{ACTUAL_OUTPUT_P2}} but got {{output}}"
     print("actual part 2:", output)
+    pyperclip.copy(output)
 
 if __name__ == "__main__":
     main()
