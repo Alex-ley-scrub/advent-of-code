@@ -87,10 +87,13 @@ def get_input(year: int, day: int) -> str:
 
 
 if __name__ == "__main__":
+    import datetime
     from argparse import ArgumentParser
 
     parser = ArgumentParser()
-    parser.add_argument("--year", type=int)
-    parser.add_argument("--day", type=int)
+    today = datetime.datetime.now()
+    parser.add_argument("--year", type=int, default=today.year)
+    parser.add_argument("--day", type=int, default=today.day)
     args = parser.parse_args()
+    print(args)
     get_input(args.year, args.day)
