@@ -12,6 +12,7 @@ from __future__ import annotations  # https://www.python.org/dev/peps/pep-0585/
 # Standard library imports:
 import os
 import re
+import time
 import operator
 import itertools
 import functools
@@ -44,22 +45,34 @@ def main():
     with open(DATA_PATH, "r") as f:
         ACTUAL_INPUT = f.read()
 
+    t_start = time.time()
     output = part_1(TEST_INPUT_P1)
+    t_end = time.time()
     assert output == TEST_OUTPUT_P1, f"expected {{TEST_OUTPUT_P1}} but got {{output}}"
     print("test part 1:", output)
+    print(f"time: {{t_end - t_start:.3f}} sec")
 
+    t_start = time.time()
     output = part_1(ACTUAL_INPUT)
+    t_end = time.time()
     assert output == ACTUAL_OUTPUT_P1, f"expected {{ACTUAL_OUTPUT_P1}} but got {{output}}"
     print("actual part 1:", output)
+    print(f"time: {{t_end - t_start:.3f}} sec")
     pyperclip.copy(output)
 
+    t_start = time.time()
     output = part_2(TEST_INPUT_P2)
+    t_end = time.time()
     assert output == TEST_OUTPUT_P2, f"expected {{TEST_OUTPUT_P2}} but got {{output}}"
     print("test part 2:", output)
+    print(f"time: {{t_end - t_start:.3f}} sec")
 
+    t_start = time.time()
     output = part_2(ACTUAL_INPUT)
+    t_end = time.time()
     assert output == ACTUAL_OUTPUT_P2, f"expected {{ACTUAL_OUTPUT_P2}} but got {{output}}"
     print("actual part 2:", output)
+    print(f"time: {{t_end - t_start:.3f}} sec")
     pyperclip.copy(output)
 
 if __name__ == "__main__":
